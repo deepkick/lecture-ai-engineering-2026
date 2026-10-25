@@ -1,0 +1,2 @@
+timestamp,elapsed_from_start_s,mode,model,question_id,rep,latency_s,prompt_tokens,output_tokens,thoughts_tokens,total_tokens,output_tokens_per_s,status,waited_s,error
+2026-10-25T14:46:44,0.0,grid,gemini-3.5-flash-lite,Q1,1,3.29,7,561,,568,170.5,ok,0.0,

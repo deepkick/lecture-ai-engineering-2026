@@ -1,0 +1,1970 @@
+{
+ "version": "v1",
+ "system_prompt": "あなたは講座「AIエンジニアリング実践 2026」（AIE2026）の用語集の説明係です。質問された用語が用語集にあれば、その定義を答えてください。用語集にない用語なら「その用語は用語集にありません。」とだけ答えてください。",
+ "abstain_answer": "その用語は用語集にありません。",
+ "abstain_patterns": [
+  "用語集(に|には|の中に|の検索結果に)(「[^」]{1,60}」|この用語|その用語|該当する用語|該当するもの|記載)?(は|が)?(ありません|載っていません|載ってません|見つかりません|記載がありません|記載されていません|含まれていません|存在しません)",
+  "用語集に(は)?ない",
+  "(わかりません|分かりません|存じません|知りません|情報がありません|確認できません)"
+ ],
+ "scoring": {
+  "answer": "must_include はグループの AND、グループ内は OR。大文字小文字は区別しない。断った場合は over_refusal",
+  "abstain": "abstain_patterns のどれかに一致すれば abstained（正解）、しなければ asserted。answer 型で一致すれば over_refusal",
+  "general": "system プロンプトなしで生成し、must_include で採点",
+  "answer_aux": "補助指標：答えと定義文の文字単位 ROUGE-L（F 値）。必須語句の採点が言い換えに厳しすぎないかを確かめるため"
+ },
+ "items": [
+  {
+   "id": "A1",
+   "category": "A",
+   "sub": "seen_template",
+   "kind": "answer",
+   "question": "「LoRA」とは何ですか？",
+   "term_id": "lora",
+   "scope": "general",
+   "must_include": [
+    [
+     "固定"
+    ],
+    [
+     "小さな行列",
+     "低ランク"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "id": "A2",
+   "category": "A",
+   "sub": "seen_template",
+   "kind": "answer",
+   "question": "「ハルシネーション」とは何ですか？",
+   "term_id": "hallucination",
+   "scope": "general",
+   "must_include": [
+    [
+     "事実と異なる",
+     "存在しない"
+    ],
+    [
+     "もっともらしく"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "id": "A3",
+   "category": "A",
+   "sub": "seen_template",
+   "kind": "answer",
+   "question": "「コンテキストウィンドウ」とは何ですか？",
+   "term_id": "context-window",
+   "scope": "general",
+   "must_include": [
+    [
+     "上限"
+    ],
+    [
+     "トークン"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "id": "A4",
+   "category": "A",
+   "sub": "seen_template",
+   "kind": "answer",
+   "question": "「宿題の3レベル」とは何ですか？",
+   "term_id": "homework-levels",
+   "scope": "course",
+   "must_include": [
+    [
+     "基礎"
+    ],
+    [
+     "実装"
+    ],
+    [
+     "発展"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "id": "A5",
+   "category": "A",
+   "sub": "seen_template",
+   "kind": "answer",
+   "question": "「既定モデル」とは何ですか？",
+   "term_id": "default-model",
+   "scope": "course",
+   "must_include": [
+    [
+     "gemini-3.5-flash-lite"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "id": "A6",
+   "category": "A",
+   "sub": "seen_template",
+   "kind": "answer",
+   "question": "「lecNN-start タグ」とは何ですか？",
+   "term_id": "lec-start-tag",
+   "scope": "course",
+   "must_include": [
+    [
+     "開始時点",
+     "演習開始"
+    ],
+    [
+     "ブランチ",
+     "前の回"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "id": "B1-1",
+   "category": "B",
+   "sub": "new_template",
+   "kind": "answer",
+   "question": "QLoRAって何？",
+   "term_id": "qlora",
+   "scope": "general",
+   "must_include": [
+    [
+     "量子化",
+     "4ビット",
+     "4bit"
+    ],
+    [
+     "メモリ"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "id": "B1-2",
+   "category": "B",
+   "sub": "new_template",
+   "kind": "answer",
+   "question": "過学習とはどういう状態のことですか？",
+   "term_id": "overfitting",
+   "scope": "general",
+   "must_include": [
+    [
+     "学習データ"
+    ],
+    [
+     "未知",
+     "検証"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "id": "B1-3",
+   "category": "B",
+   "sub": "new_template",
+   "kind": "answer",
+   "question": "レート制限について、初心者にもわかるように教えてください。",
+   "term_id": "rate-limit",
+   "scope": "general",
+   "must_include": [
+    [
+     "上限"
+    ],
+    [
+     "429",
+     "リクエスト"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "id": "B1-4",
+   "category": "B",
+   "sub": "new_template",
+   "kind": "answer",
+   "question": "ハーネスという言葉は何を指しますか？",
+   "term_id": "harness",
+   "scope": "general",
+   "must_include": [
+    [
+     "包"
+    ],
+    [
+     "ループ",
+     "ツール"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "id": "B1-5",
+   "category": "B",
+   "sub": "new_template",
+   "kind": "answer",
+   "question": "answer.md には何を書きますか？",
+   "term_id": "answer-md",
+   "scope": "course",
+   "must_include": [
+    [
+     "レベル",
+     "結果",
+     "気づき"
+    ],
+    [
+     "PR",
+     "提出"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "id": "B1-6",
+   "category": "B",
+   "sub": "new_template",
+   "kind": "answer",
+   "question": "Codespaces secret はどう使いますか？",
+   "term_id": "codespaces-secret",
+   "scope": "general",
+   "must_include": [
+    [
+     "環境変数"
+    ],
+    [
+     "fork",
+     "repo"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "id": "B2-1",
+   "category": "B",
+   "sub": "alias",
+   "kind": "answer",
+   "question": "Low-Rank Adaptation とは何ですか？",
+   "term_id": "lora",
+   "scope": "general",
+   "must_include": [
+    [
+     "固定"
+    ],
+    [
+     "小さな行列",
+     "低ランク"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "id": "B2-2",
+   "category": "B",
+   "sub": "alias",
+   "kind": "answer",
+   "question": "LLM の「幻覚」とは何ですか？",
+   "term_id": "hallucination",
+   "scope": "general",
+   "must_include": [
+    [
+     "事実と異なる",
+     "存在しない"
+    ],
+    [
+     "もっともらしく"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "id": "B2-3",
+   "category": "B",
+   "sub": "alias",
+   "kind": "answer",
+   "question": "温度パラメータとは何ですか？",
+   "term_id": "temperature",
+   "scope": "general",
+   "must_include": [
+    [
+     "ランダム"
+    ],
+    [
+     "安定",
+     "多様"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "id": "B2-4",
+   "category": "B",
+   "sub": "alias",
+   "kind": "answer",
+   "question": "宿題レベルとは何ですか？",
+   "term_id": "homework-levels",
+   "scope": "course",
+   "must_include": [
+    [
+     "基礎"
+    ],
+    [
+     "実装"
+    ],
+    [
+     "発展"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "id": "B2-5",
+   "category": "B",
+   "sub": "alias",
+   "kind": "answer",
+   "question": "HITL とは何ですか？",
+   "term_id": "human-in-the-loop",
+   "scope": "general",
+   "must_include": [
+    [
+     "人"
+    ],
+    [
+     "確認",
+     "承認"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "id": "B2-6",
+   "category": "B",
+   "sub": "alias",
+   "kind": "answer",
+   "question": "デフォルトモデルは何ですか？",
+   "term_id": "default-model",
+   "scope": "course",
+   "must_include": [
+    [
+     "gemini-3.5-flash-lite"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "id": "B3-1",
+   "category": "B",
+   "sub": "description_only",
+   "kind": "answer",
+   "question": "事前学習済みの重みを固定し、小さな行列だけを学習する手法の名前は？",
+   "term_id": "lora",
+   "scope": "general",
+   "must_include": [
+    [
+     "LoRA"
+    ]
+   ],
+   "note": "「事前学習」を含むので検索は事前学習を返すと予想"
+  },
+  {
+   "id": "B3-2",
+   "category": "B",
+   "sub": "description_only",
+   "kind": "answer",
+   "question": "学習データ全体を1周学習することを何と呼びますか？",
+   "term_id": "epoch",
+   "scope": "general",
+   "must_include": [
+    [
+     "エポック",
+     "epoch"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "id": "B3-3",
+   "category": "B",
+   "sub": "description_only",
+   "kind": "answer",
+   "question": "AIE2026 で、各回の演習開始時点のコードに付いている Git のタグを何と呼びますか？",
+   "term_id": "lec-start-tag",
+   "scope": "course",
+   "must_include": [
+    [
+     "start"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "id": "B3-4",
+   "category": "B",
+   "sub": "description_only",
+   "kind": "answer",
+   "question": "エージェントの処理の途中に人の承認を組み込むことを何と言いますか？",
+   "term_id": "human-in-the-loop",
+   "scope": "general",
+   "must_include": [
+    [
+     "Human-in-the-loop",
+     "HITL"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "id": "C1-1",
+   "category": "C",
+   "sub": "real_general",
+   "kind": "abstain",
+   "question": "RAG とは何ですか？",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "実在・一般的。用語集にない"
+  },
+  {
+   "id": "C1-2",
+   "category": "C",
+   "sub": "real_general",
+   "kind": "abstain",
+   "question": "Transformer とは何ですか？",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "実在・一般的"
+  },
+  {
+   "id": "C1-3",
+   "category": "C",
+   "sub": "real_general",
+   "kind": "abstain",
+   "question": "埋め込み（エンベディング）とは何ですか？",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "実在・一般的"
+  },
+  {
+   "id": "C1-4",
+   "category": "C",
+   "sub": "real_general",
+   "kind": "abstain",
+   "question": "プロンプトキャッシュとは何ですか？",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "実在。「プロンプト」を含むので検索はプロンプトを返すと予想"
+  },
+  {
+   "id": "C2-1",
+   "category": "C",
+   "sub": "course_near",
+   "kind": "abstain",
+   "question": "継続事前学習とは何ですか？",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "第2回の講義に出たが用語集にない。「事前学習」で検索が誤って当たると予想"
+  },
+  {
+   "id": "C2-2",
+   "category": "C",
+   "sub": "course_near",
+   "kind": "abstain",
+   "question": "DoRA とは何ですか？",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "第2回の講義に出たが用語集にない"
+  },
+  {
+   "id": "C2-3",
+   "category": "C",
+   "sub": "course_near",
+   "kind": "abstain",
+   "question": "推論時計算とは何ですか？",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "第2回の講義に出たが用語集にない"
+  },
+  {
+   "id": "C2-4",
+   "category": "C",
+   "sub": "course_near",
+   "kind": "abstain",
+   "question": "蒸留（ディスティレーション）とは何ですか？",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "第2回の講義に出たが用語集にない"
+  },
+  {
+   "id": "C3-1",
+   "category": "C",
+   "sub": "fictitious",
+   "kind": "abstain",
+   "question": "グラディエント・スタッキングとは何ですか？",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "架空"
+  },
+  {
+   "id": "C3-2",
+   "category": "C",
+   "sub": "fictitious",
+   "kind": "abstain",
+   "question": "リバースLoRA とは何ですか？",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "架空。「LoRA」で検索が誤って当たると予想"
+  },
+  {
+   "id": "C3-3",
+   "category": "C",
+   "sub": "fictitious",
+   "kind": "abstain",
+   "question": "トークン・フォールディングとは何ですか？",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "架空。「トークン」で検索が誤って当たると予想"
+  },
+  {
+   "id": "C3-4",
+   "category": "C",
+   "sub": "fictitious",
+   "kind": "abstain",
+   "question": "AIE2026 の「週次ボーナス課題」とは何ですか？",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "架空（講座固有の体裁）"
+  },
+  {
+   "id": "D1",
+   "category": "D",
+   "sub": "general",
+   "kind": "general",
+   "question": "日本の首都はどこですか？",
+   "term_id": null,
+   "scope": null,
+   "must_include": [
+    [
+     "東京"
+    ]
+   ],
+   "note": "system プロンプトなしで評価"
+  },
+  {
+   "id": "D2",
+   "category": "D",
+   "sub": "general",
+   "kind": "general",
+   "question": "「ありがとう」を英語にしてください。",
+   "term_id": null,
+   "scope": null,
+   "must_include": [
+    [
+     "thank"
+    ]
+   ],
+   "note": "system プロンプトなしで評価"
+  },
+  {
+   "id": "D3",
+   "category": "D",
+   "sub": "general",
+   "kind": "general",
+   "question": "1 から 10 までの整数の和はいくつですか？",
+   "term_id": null,
+   "scope": null,
+   "must_include": [
+    [
+     "55"
+    ]
+   ],
+   "note": "system プロンプトなしで評価"
+  },
+  {
+   "id": "D4",
+   "category": "D",
+   "sub": "general",
+   "kind": "general",
+   "question": "Python でリストの長さを調べる組み込み関数は何ですか？",
+   "term_id": null,
+   "scope": null,
+   "must_include": [
+    [
+     "len"
+    ]
+   ],
+   "note": "system プロンプトなしで評価"
+  },
+  {
+   "id": "B4-01",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "AIエンジニアリングという用語の意味を、短く説明してください。",
+   "term_id": "ai-engineering",
+   "scope": "general",
+   "must_include": [
+    [
+     "基盤モデル"
+    ],
+    [
+     "評価",
+     "運用"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-02",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "評価と改善のサイクルという用語の意味を、短く説明してください。",
+   "term_id": "evaluation-loop",
+   "scope": "general",
+   "must_include": [
+    [
+     "測る"
+    ],
+    [
+     "直す",
+     "繰り返"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-03",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "LLM（大規模言語モデル）という用語の意味を、短く説明してください。",
+   "term_id": "llm",
+   "scope": "general",
+   "must_include": [
+    [
+     "トークン"
+    ],
+    [
+     "予測"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-04",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "トークンという用語の意味を、短く説明してください。",
+   "term_id": "token",
+   "scope": "general",
+   "must_include": [
+    [
+     "単位"
+    ],
+    [
+     "分割",
+     "断片"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-05",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "コンテキストウィンドウという用語の意味を、短く説明してください。",
+   "term_id": "context-window",
+   "scope": "general",
+   "must_include": [
+    [
+     "上限"
+    ],
+    [
+     "トークン"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-06",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "プロンプトという用語の意味を、短く説明してください。",
+   "term_id": "prompt",
+   "scope": "general",
+   "must_include": [
+    [
+     "入力"
+    ],
+    [
+     "出力形式",
+     "役割",
+     "制約"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-07",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "システムプロンプトという用語の意味を、短く説明してください。",
+   "term_id": "system-prompt",
+   "scope": "general",
+   "must_include": [
+    [
+     "振る舞い",
+     "役割"
+    ],
+    [
+     "ルール",
+     "口調"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-08",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "temperatureという用語の意味を、短く説明してください。",
+   "term_id": "temperature",
+   "scope": "general",
+   "must_include": [
+    [
+     "ランダム"
+    ],
+    [
+     "安定",
+     "多様"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-09",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "ハルシネーションという用語の意味を、短く説明してください。",
+   "term_id": "hallucination",
+   "scope": "general",
+   "must_include": [
+    [
+     "事実と異なる",
+     "存在しない"
+    ],
+    [
+     "もっともらしく"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-10",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "APIという用語の意味を、短く説明してください。",
+   "term_id": "api",
+   "scope": "general",
+   "must_include": [
+    [
+     "プログラム"
+    ],
+    [
+     "呼び出"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-11",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "APIキーという用語の意味を、短く説明してください。",
+   "term_id": "api-key",
+   "scope": "general",
+   "must_include": [
+    [
+     "秘密"
+    ],
+    [
+     "識別"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-12",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "環境変数という用語の意味を、短く説明してください。",
+   "term_id": "environment-variable",
+   "scope": "general",
+   "must_include": [
+    [
+     "プログラムの外",
+     "OS",
+     "実行環境"
+    ],
+    [
+     "秘密",
+     "設定"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-13",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "レート制限という用語の意味を、短く説明してください。",
+   "term_id": "rate-limit",
+   "scope": "general",
+   "must_include": [
+    [
+     "上限"
+    ],
+    [
+     "429",
+     "リクエスト"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-14",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "GitHub Codespacesという用語の意味を、短く説明してください。",
+   "term_id": "codespaces",
+   "scope": "general",
+   "must_include": [
+    [
+     "クラウド"
+    ],
+    [
+     "開発環境"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-15",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "devcontainerという用語の意味を、短く説明してください。",
+   "term_id": "devcontainer",
+   "scope": "general",
+   "must_include": [
+    [
+     "コンテナ"
+    ],
+    [
+     "開発環境"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-16",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "Codespaces secretという用語の意味を、短く説明してください。",
+   "term_id": "codespaces-secret",
+   "scope": "general",
+   "must_include": [
+    [
+     "秘密"
+    ],
+    [
+     "環境変数"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-17",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "forkという用語の意味を、短く説明してください。",
+   "term_id": "fork",
+   "scope": "general",
+   "must_include": [
+    [
+     "コピー"
+    ],
+    [
+     "repo",
+     "リポジトリ"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-18",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "ブランチという用語の意味を、短く説明してください。",
+   "term_id": "branch",
+   "scope": "general",
+   "must_include": [
+    [
+     "作業"
+    ],
+    [
+     "main",
+     "分け"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-19",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "プルリクエスト（PR）という用語の意味を、短く説明してください。",
+   "term_id": "pull-request",
+   "scope": "general",
+   "must_include": [
+    [
+     "取り込"
+    ],
+    [
+     "ブランチ"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-20",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "GitHub Copilotという用語の意味を、短く説明してください。",
+   "term_id": "github-copilot",
+   "scope": "general",
+   "must_include": [
+    [
+     "補完"
+    ],
+    [
+     "チャット",
+     "エージェント"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-21",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "コード補完という用語の意味を、短く説明してください。",
+   "term_id": "code-completion",
+   "scope": "general",
+   "must_include": [
+    [
+     "続き"
+    ],
+    [
+     "提案"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-22",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "コーディングエージェントという用語の意味を、短く説明してください。",
+   "term_id": "coding-agent",
+   "scope": "general",
+   "must_include": [
+    [
+     "ファイル",
+     "コマンド"
+    ],
+    [
+     "自律",
+     "複数ステップ"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-23",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "事前学習という用語の意味を、短く説明してください。",
+   "term_id": "pretraining",
+   "scope": "general",
+   "must_include": [
+    [
+     "大量"
+    ],
+    [
+     "次のトークン",
+     "予測"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-24",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "ファインチューニングという用語の意味を、短く説明してください。",
+   "term_id": "fine-tuning",
+   "scope": "general",
+   "must_include": [
+    [
+     "追加学習"
+    ],
+    [
+     "形式",
+     "口調",
+     "タスク"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-25",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "教師ありファインチューニング（SFT）という用語の意味を、短く説明してください。",
+   "term_id": "sft",
+   "scope": "general",
+   "must_include": [
+    [
+     "望ましい出力",
+     "ペア",
+     "模範回答"
+    ],
+    [
+     "追加学習",
+     "学習"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-26",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "PEFTという用語の意味を、短く説明してください。",
+   "term_id": "peft",
+   "scope": "general",
+   "must_include": [
+    [
+     "一部",
+     "小さなパラメータ"
+    ],
+    [
+     "メモリ",
+     "LoRA"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-27",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "LoRAという用語の意味を、短く説明してください。",
+   "term_id": "lora",
+   "scope": "general",
+   "must_include": [
+    [
+     "固定"
+    ],
+    [
+     "小さな行列",
+     "低ランク"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-28",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "ランク（LoRAのr）という用語の意味を、短く説明してください。",
+   "term_id": "lora-rank",
+   "scope": "general",
+   "must_include": [
+    [
+     "ハイパーパラメータ"
+    ],
+    [
+     "表現力",
+     "メモリ"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-29",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "QLoRAという用語の意味を、短く説明してください。",
+   "term_id": "qlora",
+   "scope": "general",
+   "must_include": [
+    [
+     "量子化",
+     "4ビット",
+     "4bit"
+    ],
+    [
+     "メモリ"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-30",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "量子化という用語の意味を、短く説明してください。",
+   "term_id": "quantization",
+   "scope": "general",
+   "must_include": [
+    [
+     "ビット"
+    ],
+    [
+     "メモリ"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-31",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "学習率という用語の意味を、短く説明してください。",
+   "term_id": "learning-rate",
+   "scope": "general",
+   "must_include": [
+    [
+     "更新"
+    ],
+    [
+     "大きすぎ",
+     "小さすぎ"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-32",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "エポックという用語の意味を、短く説明してください。",
+   "term_id": "epoch",
+   "scope": "general",
+   "must_include": [
+    [
+     "1周",
+     "一周",
+     "1回"
+    ],
+    [
+     "学習データ",
+     "データ全体"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-33",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "過学習という用語の意味を、短く説明してください。",
+   "term_id": "overfitting",
+   "scope": "general",
+   "must_include": [
+    [
+     "学習データ"
+    ],
+    [
+     "未知",
+     "検証"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-34",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "Hugging Face Hubという用語の意味を、短く説明してください。",
+   "term_id": "huggingface-hub",
+   "scope": "general",
+   "must_include": [
+    [
+     "モデル"
+    ],
+    [
+     "共有",
+     "ダウンロード",
+     "公開"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-35",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "AIエージェントという用語の意味を、短く説明してください。",
+   "term_id": "ai-agent",
+   "scope": "general",
+   "must_include": [
+    [
+     "ツール"
+    ],
+    [
+     "ループ",
+     "判断"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-36",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "エージェントループという用語の意味を、短く説明してください。",
+   "term_id": "agent-loop",
+   "scope": "general",
+   "must_include": [
+    [
+     "ツール"
+    ],
+    [
+     "繰り返"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-37",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "ツール（Tool use / Function calling）という用語の意味を、短く説明してください。",
+   "term_id": "tool",
+   "scope": "general",
+   "must_include": [
+    [
+     "関数"
+    ],
+    [
+     "呼び出"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-38",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "ツールの説明文という用語の意味を、短く説明してください。",
+   "term_id": "tool-description",
+   "scope": "general",
+   "must_include": [
+    [
+     "用途",
+     "docstring"
+    ],
+    [
+     "引数"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-39",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "構造化出力という用語の意味を、短く説明してください。",
+   "term_id": "structured-output",
+   "scope": "general",
+   "must_include": [
+    [
+     "JSON",
+     "スキーマ",
+     "型"
+    ],
+    [
+     "後処理",
+     "プログラム"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-40",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "ハーネスという用語の意味を、短く説明してください。",
+   "term_id": "harness",
+   "scope": "general",
+   "must_include": [
+    [
+     "包"
+    ],
+    [
+     "ループ",
+     "ツール"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-41",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "Piという用語の意味を、短く説明してください。",
+   "term_id": "pi",
+   "scope": "course",
+   "must_include": [
+    [
+     "コーディングエージェント"
+    ],
+    [
+     "オープンソース",
+     "MIT",
+     "ターミナル"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-42",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "Pydantic AIという用語の意味を、短く説明してください。",
+   "term_id": "pydantic-ai",
+   "scope": "general",
+   "must_include": [
+    [
+     "エージェント"
+    ],
+    [
+     "型",
+     "フレームワーク"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-43",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "ADK（Agent Development Kit）という用語の意味を、短く説明してください。",
+   "term_id": "adk",
+   "scope": "general",
+   "must_include": [
+    [
+     "Google"
+    ],
+    [
+     "エージェント"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-44",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "MCP（Model Context Protocol）という用語の意味を、短く説明してください。",
+   "term_id": "mcp",
+   "scope": "general",
+   "must_include": [
+    [
+     "プロトコル",
+     "標準"
+    ],
+    [
+     "ツール",
+     "外部"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-45",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "ガードレールという用語の意味を、短く説明してください。",
+   "term_id": "guardrail",
+   "scope": "general",
+   "must_include": [
+    [
+     "制約",
+     "検査"
+    ],
+    [
+     "望ましくない",
+     "エージェント"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-46",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "Human-in-the-loopという用語の意味を、短く説明してください。",
+   "term_id": "human-in-the-loop",
+   "scope": "general",
+   "must_include": [
+    [
+     "人"
+    ],
+    [
+     "確認",
+     "承認"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-47",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "TestModelという用語の意味を、短く説明してください。",
+   "term_id": "test-model",
+   "scope": "general",
+   "must_include": [
+    [
+     "テスト"
+    ],
+    [
+     "LLMを呼ばず",
+     "偽",
+     "ダミー"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-48",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "宿題の3レベルという用語の意味を、短く説明してください。",
+   "term_id": "homework-levels",
+   "scope": "course",
+   "must_include": [
+    [
+     "基礎"
+    ],
+    [
+     "実装"
+    ],
+    [
+     "発展"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-49",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "answer.mdという用語の意味を、短く説明してください。",
+   "term_id": "answer-md",
+   "scope": "course",
+   "must_include": [
+    [
+     "lectures"
+    ],
+    [
+     "PR",
+     "提出"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-50",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "lecNN-start タグという用語の意味を、短く説明してください。",
+   "term_id": "lec-start-tag",
+   "scope": "course",
+   "must_include": [
+    [
+     "開始時点",
+     "演習開始"
+    ],
+    [
+     "ブランチ",
+     "前の回"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-51",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "既定モデルという用語の意味を、短く説明してください。",
+   "term_id": "default-model",
+   "scope": "course",
+   "must_include": [
+    [
+     "gemini-3.5-flash-lite"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-52",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "外部ツールという用語の意味を、短く説明してください。",
+   "term_id": "external-tool",
+   "scope": "general",
+   "must_include": [
+    [
+     "プログラムの外",
+     "プロセス"
+    ],
+    [
+     "API",
+     "データベース",
+     "MCP",
+     "Web"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-53",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "MCPサーバーという用語の意味を、短く説明してください。",
+   "term_id": "mcp-server",
+   "scope": "general",
+   "must_include": [
+    [
+     "公開"
+    ],
+    [
+     "ツール"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-54",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "MCPクライアントという用語の意味を、短く説明してください。",
+   "term_id": "mcp-client",
+   "scope": "general",
+   "must_include": [
+    [
+     "接続"
+    ],
+    [
+     "ツール"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-55",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "トランスポート（stdio・Streamable HTTP）という用語の意味を、短く説明してください。",
+   "term_id": "mcp-transport",
+   "scope": "general",
+   "must_include": [
+    [
+     "経路",
+     "やりとり"
+    ],
+    [
+     "標準入出力",
+     "サブプロセス",
+     "URL"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-56",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "mcpServers設定という用語の意味を、短く説明してください。",
+   "term_id": "mcp-config",
+   "scope": "general",
+   "must_include": [
+    [
+     "サーバー"
+    ],
+    [
+     "起動コマンド",
+     "接続先",
+     "列挙"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-57",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "ツールの名前空間という用語の意味を、短く説明してください。",
+   "term_id": "tool-namespace",
+   "scope": "general",
+   "must_include": [
+    [
+     "接頭辞",
+     "プレフィックス"
+    ],
+    [
+     "衝突",
+     "区別"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "B4-58",
+   "category": "B",
+   "sub": "mechanical_paraphrase",
+   "kind": "answer",
+   "question": "fetchサーバーという用語の意味を、短く説明してください。",
+   "term_id": "fetch-server",
+   "scope": "general",
+   "must_include": [
+    [
+     "URL",
+     "ページ"
+    ],
+    [
+     "Markdown",
+     "取得"
+    ]
+   ],
+   "note": "機械的な拡張（学習で使っていない聞き方を全語に適用）"
+  },
+  {
+   "id": "C4-01",
+   "category": "C",
+   "sub": "mechanical_real_general",
+   "kind": "abstain",
+   "question": "LangChainという用語の意味を、短く説明してください。",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "機械的な拡張"
+  },
+  {
+   "id": "C4-02",
+   "category": "C",
+   "sub": "mechanical_real_general",
+   "kind": "abstain",
+   "question": "ベクトル検索という用語の意味を、短く説明してください。",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "機械的な拡張"
+  },
+  {
+   "id": "C4-03",
+   "category": "C",
+   "sub": "mechanical_real_general",
+   "kind": "abstain",
+   "question": "ゼロショット学習という用語の意味を、短く説明してください。",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "機械的な拡張"
+  },
+  {
+   "id": "C4-04",
+   "category": "C",
+   "sub": "mechanical_real_general",
+   "kind": "abstain",
+   "question": "知識グラフという用語の意味を、短く説明してください。",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "機械的な拡張"
+  },
+  {
+   "id": "C4-05",
+   "category": "C",
+   "sub": "mechanical_real_general",
+   "kind": "abstain",
+   "question": "ReActという用語の意味を、短く説明してください。",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "機械的な拡張"
+  },
+  {
+   "id": "C4-06",
+   "category": "C",
+   "sub": "mechanical_real_general",
+   "kind": "abstain",
+   "question": "パープレキシティという用語の意味を、短く説明してください。",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "機械的な拡張"
+  },
+  {
+   "id": "C4-07",
+   "category": "C",
+   "sub": "mechanical_real_general",
+   "kind": "abstain",
+   "question": "勾配クリッピングという用語の意味を、短く説明してください。",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "機械的な拡張"
+  },
+  {
+   "id": "C4-08",
+   "category": "C",
+   "sub": "mechanical_real_general",
+   "kind": "abstain",
+   "question": "LLM-as-a-Judgeという用語の意味を、短く説明してください。",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "機械的な拡張"
+  },
+  {
+   "id": "C4-09",
+   "category": "C",
+   "sub": "mechanical_course_near",
+   "kind": "abstain",
+   "question": "コンテキストエンジニアリングという用語の意味を、短く説明してください。",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "機械的な拡張"
+  },
+  {
+   "id": "C4-10",
+   "category": "C",
+   "sub": "mechanical_course_near",
+   "kind": "abstain",
+   "question": "Lost in the Middleという用語の意味を、短く説明してください。",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "機械的な拡張"
+  },
+  {
+   "id": "C4-11",
+   "category": "C",
+   "sub": "mechanical_course_near",
+   "kind": "abstain",
+   "question": "迎合（シコファンシー）という用語の意味を、短く説明してください。",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "機械的な拡張"
+  },
+  {
+   "id": "C4-12",
+   "category": "C",
+   "sub": "mechanical_course_near",
+   "kind": "abstain",
+   "question": "RLHFという用語の意味を、短く説明してください。",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "機械的な拡張"
+  },
+  {
+   "id": "C4-13",
+   "category": "C",
+   "sub": "mechanical_course_near",
+   "kind": "abstain",
+   "question": "RLVRという用語の意味を、短く説明してください。",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "機械的な拡張"
+  },
+  {
+   "id": "C4-14",
+   "category": "C",
+   "sub": "mechanical_course_near",
+   "kind": "abstain",
+   "question": "オープンウェイトという用語の意味を、短く説明してください。",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "機械的な拡張"
+  },
+  {
+   "id": "C4-15",
+   "category": "C",
+   "sub": "mechanical_fictitious",
+   "kind": "abstain",
+   "question": "ハイパー・トークナイズという用語の意味を、短く説明してください。",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "機械的な拡張"
+  },
+  {
+   "id": "C4-16",
+   "category": "C",
+   "sub": "mechanical_fictitious",
+   "kind": "abstain",
+   "question": "アテンション・ドリフト補正という用語の意味を、短く説明してください。",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "機械的な拡張"
+  },
+  {
+   "id": "C4-17",
+   "category": "C",
+   "sub": "mechanical_fictitious",
+   "kind": "abstain",
+   "question": "メタLoRA蒸着という用語の意味を、短く説明してください。",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "機械的な拡張"
+  },
+  {
+   "id": "C4-18",
+   "category": "C",
+   "sub": "mechanical_fictitious",
+   "kind": "abstain",
+   "question": "AIE2026 の特別演習パスという用語の意味を、短く説明してください。",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "機械的な拡張"
+  },
+  {
+   "id": "C4-19",
+   "category": "C",
+   "sub": "mechanical_fictitious",
+   "kind": "abstain",
+   "question": "デュアル・プロンプト圧縮という用語の意味を、短く説明してください。",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "機械的な拡張"
+  },
+  {
+   "id": "C4-20",
+   "category": "C",
+   "sub": "mechanical_fictitious",
+   "kind": "abstain",
+   "question": "逆量子化ブーストという用語の意味を、短く説明してください。",
+   "term_id": null,
+   "scope": null,
+   "must_include": [],
+   "note": "機械的な拡張"
+  }
+ ],
+ "mechanical_template": "{term}という用語の意味を、短く説明してください。",
+ "course_specific_terms": [
+  "answer-md",
+  "default-model",
+  "homework-levels",
+  "lec-start-tag",
+  "pi"
+ ],
+ "abstain_pattern_tests": {
+  "should_match": [
+   "用語集に「RAG とは何ですか？」は見つかりませんでした。",
+   "用語集には「RAG」は載っていません。",
+   "用語集に該当する用語はありません",
+   "その用語は用語集にありません。",
+   "申し訳ありませんが、わかりません。",
+   "その用語は用語集には載っていません。",
+   "用語集の検索結果に該当するものはありません。",
+   "RAG は用語集にない用語です。"
+  ],
+  "should_not_match": [
+   "用語集によると、LoRA は量子化手法ではありません",
+   "用語集では、QLoRA は量子化してから LoRA で学習する手法です。必ずしも精度が上がるわけではありません。"
+  ]
+ }
+}

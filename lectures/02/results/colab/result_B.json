@@ -1,0 +1,1196 @@
+{
+  "config": {
+    "base_model": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "seed": 42,
+    "lr": 0.0002,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "max_seq_len": 512,
+    "max_new_tokens": 192,
+    "gen": {
+      "do_sample": false
+    },
+    "VARIANT": "B",
+    "EPOCHS": {
+      "A": 10,
+      "B": 3
+    },
+    "RUN_BASELINES": true,
+    "RUN_FT_RAG": true,
+    "USE_DRIVE": true,
+    "FORCE_RERUN": false
+  },
+  "versions": {
+    "transformers": "5.18.0",
+    "peft": "0.21.1",
+    "trl": "1.14.2",
+    "accelerate": "1.15.0",
+    "datasets": "5.1.0",
+    "torch": "2.11.0+cu130"
+  },
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "repo_commit": "bd36629",
+  "eval_set_version": "v1",
+  "method": "LoRA（量子化なし）",
+  "base_memory_gb": 3.01,
+  "train": {
+    "seconds": 68.0,
+    "steps": 192,
+    "expected_steps": 192,
+    "epoch": 3.0,
+    "final_loss": 0.07678287625312805,
+    "mean_loss": 0.42272754820684594,
+    "trainable_params": 6389760,
+    "all_params": 758782784,
+    "trainable_pct": 0.8421066126877228,
+    "n_train": 510,
+    "warmup_steps": 19,
+    "save_steps": 48,
+    "bf16": false,
+    "fp16": false
+  },
+  "summaries": {
+    "base": {
+      "label": "base",
+      "rag": false,
+      "seconds": 199.1,
+      "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "commit": "bd36629",
+      "n": 116,
+      "ok": 9,
+      "rate": 0.07758620689655173,
+      "rougeL_mean": 0.16542675620092875,
+      "rougeL_median": 0.1640928169794884,
+      "outcomes": {
+        "correct": 6,
+        "wrong": 72,
+        "over_refusal": 6,
+        "asserted": 29,
+        "abstained": 3
+      },
+      "by_category": {
+        "A": {
+          "n": 6,
+          "ok": 1,
+          "rate": 0.16666666666666666,
+          "rougeL_mean": 0.13424085447096512,
+          "rougeL_median": 0.12182795698924731,
+          "outcomes": {
+            "correct": 1,
+            "wrong": 4,
+            "over_refusal": 1
+          }
+        },
+        "B1": {
+          "n": 6,
+          "ok": 0,
+          "rate": 0.0,
+          "rougeL_mean": 0.15797991865142352,
+          "rougeL_median": 0.15949506155552923,
+          "outcomes": {
+            "wrong": 5,
+            "over_refusal": 1
+          }
+        },
+        "B2": {
+          "n": 6,
+          "ok": 0,
+          "rate": 0.0,
+          "rougeL_mean": 0.13786244056132693,
+          "rougeL_median": 0.13500731899560858,
+          "outcomes": {
+            "wrong": 6
+          }
+        },
+        "B3": {
+          "n": 4,
+          "ok": 0,
+          "rate": 0.0,
+          "rougeL_mean": 0.2325877342038162,
+          "rougeL_median": 0.21518594399950333,
+          "outcomes": {
+            "wrong": 3,
+            "over_refusal": 1
+          }
+        },
+        "B4": {
+          "n": 58,
+          "ok": 1,
+          "rate": 0.017241379310344827,
+          "rougeL_mean": 0.1676429358130473,
+          "rougeL_median": 0.16443013061370548,
+          "outcomes": {
+            "wrong": 54,
+            "correct": 1,
+            "over_refusal": 3
+          }
+        },
+        "C1": {
+          "n": 4,
+          "ok": 0,
+          "rate": 0.0,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 4
+          }
+        },
+        "C2": {
+          "n": 4,
+          "ok": 1,
+          "rate": 0.25,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 3,
+            "abstained": 1
+          }
+        },
+        "C3": {
+          "n": 4,
+          "ok": 1,
+          "rate": 0.25,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 3,
+            "abstained": 1
+          }
+        },
+        "C4": {
+          "n": 20,
+          "ok": 1,
+          "rate": 0.05,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 19,
+            "abstained": 1
+          }
+        },
+        "D": {
+          "n": 4,
+          "ok": 4,
+          "rate": 1.0,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "correct": 4
+          }
+        }
+      },
+      "by_sub": {
+        "seen_template": {
+          "n": 6,
+          "ok": 1,
+          "rate": 0.16666666666666666,
+          "rougeL_mean": 0.13424085447096512,
+          "rougeL_median": 0.12182795698924731,
+          "outcomes": {
+            "correct": 1,
+            "wrong": 4,
+            "over_refusal": 1
+          }
+        },
+        "new_template": {
+          "n": 6,
+          "ok": 0,
+          "rate": 0.0,
+          "rougeL_mean": 0.15797991865142352,
+          "rougeL_median": 0.15949506155552923,
+          "outcomes": {
+            "wrong": 5,
+            "over_refusal": 1
+          }
+        },
+        "alias": {
+          "n": 6,
+          "ok": 0,
+          "rate": 0.0,
+          "rougeL_mean": 0.13786244056132693,
+          "rougeL_median": 0.13500731899560858,
+          "outcomes": {
+            "wrong": 6
+          }
+        },
+        "description_only": {
+          "n": 4,
+          "ok": 0,
+          "rate": 0.0,
+          "rougeL_mean": 0.2325877342038162,
+          "rougeL_median": 0.21518594399950333,
+          "outcomes": {
+            "wrong": 3,
+            "over_refusal": 1
+          }
+        },
+        "real_general": {
+          "n": 4,
+          "ok": 0,
+          "rate": 0.0,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 4
+          }
+        },
+        "course_near": {
+          "n": 4,
+          "ok": 1,
+          "rate": 0.25,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 3,
+            "abstained": 1
+          }
+        },
+        "fictitious": {
+          "n": 4,
+          "ok": 1,
+          "rate": 0.25,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 3,
+            "abstained": 1
+          }
+        },
+        "general": {
+          "n": 4,
+          "ok": 4,
+          "rate": 1.0,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "correct": 4
+          }
+        },
+        "mechanical_paraphrase": {
+          "n": 58,
+          "ok": 1,
+          "rate": 0.017241379310344827,
+          "rougeL_mean": 0.1676429358130473,
+          "rougeL_median": 0.16443013061370548,
+          "outcomes": {
+            "wrong": 54,
+            "correct": 1,
+            "over_refusal": 3
+          }
+        },
+        "mechanical_real_general": {
+          "n": 8,
+          "ok": 0,
+          "rate": 0.0,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 8
+          }
+        },
+        "mechanical_course_near": {
+          "n": 6,
+          "ok": 0,
+          "rate": 0.0,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 6
+          }
+        },
+        "mechanical_fictitious": {
+          "n": 6,
+          "ok": 1,
+          "rate": 0.16666666666666666,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 5,
+            "abstained": 1
+          }
+        }
+      },
+      "by_scope": {
+        "general": {
+          "n": 68,
+          "ok": 2,
+          "rate": 0.029411764705882353,
+          "rougeL_mean": 0.166768654887335,
+          "rougeL_median": 0.16443013061370548,
+          "outcomes": {
+            "correct": 2,
+            "wrong": 62,
+            "over_refusal": 4
+          }
+        },
+        "course": {
+          "n": 12,
+          "ok": 0,
+          "rate": 0.0,
+          "rougeL_mean": 0.15782266364462666,
+          "rougeL_median": 0.1467623629623787,
+          "outcomes": {
+            "wrong": 10,
+            "over_refusal": 2
+          }
+        }
+      }
+    },
+    "base_rag": {
+      "label": "base_rag",
+      "rag": true,
+      "seconds": 136.3,
+      "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "commit": "bd36629",
+      "n": 116,
+      "ok": 74,
+      "rate": 0.6379310344827587,
+      "rougeL_mean": 0.5643000410657886,
+      "rougeL_median": 0.597376311844078,
+      "outcomes": {
+        "wrong": 9,
+        "correct": 71,
+        "over_refusal": 4,
+        "asserted": 29,
+        "abstained": 3
+      },
+      "by_category": {
+        "A": {
+          "n": 6,
+          "ok": 5,
+          "rate": 0.8333333333333334,
+          "rougeL_mean": 0.542805401724606,
+          "rougeL_median": 0.4469246031746032,
+          "outcomes": {
+            "wrong": 1,
+            "correct": 5
+          }
+        },
+        "B1": {
+          "n": 6,
+          "ok": 6,
+          "rate": 1.0,
+          "rougeL_mean": 0.5320530812663229,
+          "rougeL_median": 0.5186880244088482,
+          "outcomes": {
+            "correct": 6
+          }
+        },
+        "B2": {
+          "n": 6,
+          "ok": 5,
+          "rate": 0.8333333333333334,
+          "rougeL_mean": 0.4249613274821959,
+          "rougeL_median": 0.42651436903821616,
+          "outcomes": {
+            "correct": 5,
+            "wrong": 1
+          }
+        },
+        "B3": {
+          "n": 4,
+          "ok": 0,
+          "rate": 0.0,
+          "rougeL_mean": 0.18446355594444275,
+          "rougeL_median": 0.18801953380388808,
+          "outcomes": {
+            "over_refusal": 4
+          }
+        },
+        "B4": {
+          "n": 58,
+          "ok": 51,
+          "rate": 0.8793103448275862,
+          "rougeL_mean": 0.6104694861835616,
+          "rougeL_median": 0.6294171435313551,
+          "outcomes": {
+            "correct": 51,
+            "wrong": 7
+          }
+        },
+        "C1": {
+          "n": 4,
+          "ok": 1,
+          "rate": 0.25,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 3,
+            "abstained": 1
+          }
+        },
+        "C2": {
+          "n": 4,
+          "ok": 0,
+          "rate": 0.0,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 4
+          }
+        },
+        "C3": {
+          "n": 4,
+          "ok": 0,
+          "rate": 0.0,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 4
+          }
+        },
+        "C4": {
+          "n": 20,
+          "ok": 2,
+          "rate": 0.1,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 18,
+            "abstained": 2
+          }
+        },
+        "D": {
+          "n": 4,
+          "ok": 4,
+          "rate": 1.0,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "correct": 4
+          }
+        }
+      },
+      "by_sub": {
+        "seen_template": {
+          "n": 6,
+          "ok": 5,
+          "rate": 0.8333333333333334,
+          "rougeL_mean": 0.542805401724606,
+          "rougeL_median": 0.4469246031746032,
+          "outcomes": {
+            "wrong": 1,
+            "correct": 5
+          }
+        },
+        "new_template": {
+          "n": 6,
+          "ok": 6,
+          "rate": 1.0,
+          "rougeL_mean": 0.5320530812663229,
+          "rougeL_median": 0.5186880244088482,
+          "outcomes": {
+            "correct": 6
+          }
+        },
+        "alias": {
+          "n": 6,
+          "ok": 5,
+          "rate": 0.8333333333333334,
+          "rougeL_mean": 0.4249613274821959,
+          "rougeL_median": 0.42651436903821616,
+          "outcomes": {
+            "correct": 5,
+            "wrong": 1
+          }
+        },
+        "description_only": {
+          "n": 4,
+          "ok": 0,
+          "rate": 0.0,
+          "rougeL_mean": 0.18446355594444275,
+          "rougeL_median": 0.18801953380388808,
+          "outcomes": {
+            "over_refusal": 4
+          }
+        },
+        "real_general": {
+          "n": 4,
+          "ok": 1,
+          "rate": 0.25,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 3,
+            "abstained": 1
+          }
+        },
+        "course_near": {
+          "n": 4,
+          "ok": 0,
+          "rate": 0.0,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 4
+          }
+        },
+        "fictitious": {
+          "n": 4,
+          "ok": 0,
+          "rate": 0.0,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 4
+          }
+        },
+        "general": {
+          "n": 4,
+          "ok": 4,
+          "rate": 1.0,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "correct": 4
+          }
+        },
+        "mechanical_paraphrase": {
+          "n": 58,
+          "ok": 51,
+          "rate": 0.8793103448275862,
+          "rougeL_mean": 0.6104694861835616,
+          "rougeL_median": 0.6294171435313551,
+          "outcomes": {
+            "correct": 51,
+            "wrong": 7
+          }
+        },
+        "mechanical_real_general": {
+          "n": 8,
+          "ok": 0,
+          "rate": 0.0,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 8
+          }
+        },
+        "mechanical_course_near": {
+          "n": 6,
+          "ok": 1,
+          "rate": 0.16666666666666666,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 5,
+            "abstained": 1
+          }
+        },
+        "mechanical_fictitious": {
+          "n": 6,
+          "ok": 1,
+          "rate": 0.16666666666666666,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 5,
+            "abstained": 1
+          }
+        }
+      },
+      "by_scope": {
+        "general": {
+          "n": 68,
+          "ok": 58,
+          "rate": 0.8529411764705882,
+          "rougeL_mean": 0.5767580933311796,
+          "rougeL_median": 0.6040497193263834,
+          "outcomes": {
+            "wrong": 7,
+            "correct": 58,
+            "over_refusal": 3
+          }
+        },
+        "course": {
+          "n": 12,
+          "ok": 9,
+          "rate": 0.75,
+          "rougeL_mean": 0.49370441156190636,
+          "rougeL_median": 0.5144068446899939,
+          "outcomes": {
+            "correct": 9,
+            "over_refusal": 1,
+            "wrong": 2
+          }
+        }
+      }
+    },
+    "ft_B": {
+      "label": "ft_B",
+      "rag": false,
+      "seconds": 86.2,
+      "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "commit": "bd36629",
+      "n": 116,
+      "ok": 94,
+      "rate": 0.8103448275862069,
+      "rougeL_mean": 0.9315780455014958,
+      "rougeL_median": 1.0,
+      "outcomes": {
+        "correct": 75,
+        "over_refusal": 4,
+        "wrong": 5,
+        "asserted": 13,
+        "abstained": 19
+      },
+      "by_category": {
+        "A": {
+          "n": 6,
+          "ok": 6,
+          "rate": 1.0,
+          "rougeL_mean": 1.0,
+          "rougeL_median": 1.0,
+          "outcomes": {
+            "correct": 6
+          }
+        },
+        "B1": {
+          "n": 6,
+          "ok": 6,
+          "rate": 1.0,
+          "rougeL_mean": 1.0,
+          "rougeL_median": 1.0,
+          "outcomes": {
+            "correct": 6
+          }
+        },
+        "B2": {
+          "n": 6,
+          "ok": 3,
+          "rate": 0.5,
+          "rougeL_mean": 0.5434498863193391,
+          "rougeL_median": 0.5687203791469194,
+          "outcomes": {
+            "over_refusal": 2,
+            "wrong": 1,
+            "correct": 3
+          }
+        },
+        "B3": {
+          "n": 4,
+          "ok": 0,
+          "rate": 0.0,
+          "rougeL_mean": 0.3163860805509067,
+          "rougeL_median": 0.12305961754780655,
+          "outcomes": {
+            "over_refusal": 2,
+            "wrong": 2
+          }
+        },
+        "B4": {
+          "n": 58,
+          "ok": 58,
+          "rate": 1.0,
+          "rougeL_mean": 1.0,
+          "rougeL_median": 1.0,
+          "outcomes": {
+            "correct": 58
+          }
+        },
+        "C1": {
+          "n": 4,
+          "ok": 2,
+          "rate": 0.5,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 2,
+            "abstained": 2
+          }
+        },
+        "C2": {
+          "n": 4,
+          "ok": 3,
+          "rate": 0.75,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "abstained": 3,
+            "asserted": 1
+          }
+        },
+        "C3": {
+          "n": 4,
+          "ok": 3,
+          "rate": 0.75,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "abstained": 3,
+            "asserted": 1
+          }
+        },
+        "C4": {
+          "n": 20,
+          "ok": 11,
+          "rate": 0.55,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 9,
+            "abstained": 11
+          }
+        },
+        "D": {
+          "n": 4,
+          "ok": 2,
+          "rate": 0.5,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "correct": 2,
+            "wrong": 2
+          }
+        }
+      },
+      "by_sub": {
+        "seen_template": {
+          "n": 6,
+          "ok": 6,
+          "rate": 1.0,
+          "rougeL_mean": 1.0,
+          "rougeL_median": 1.0,
+          "outcomes": {
+            "correct": 6
+          }
+        },
+        "new_template": {
+          "n": 6,
+          "ok": 6,
+          "rate": 1.0,
+          "rougeL_mean": 1.0,
+          "rougeL_median": 1.0,
+          "outcomes": {
+            "correct": 6
+          }
+        },
+        "alias": {
+          "n": 6,
+          "ok": 3,
+          "rate": 0.5,
+          "rougeL_mean": 0.5434498863193391,
+          "rougeL_median": 0.5687203791469194,
+          "outcomes": {
+            "over_refusal": 2,
+            "wrong": 1,
+            "correct": 3
+          }
+        },
+        "description_only": {
+          "n": 4,
+          "ok": 0,
+          "rate": 0.0,
+          "rougeL_mean": 0.3163860805509067,
+          "rougeL_median": 0.12305961754780655,
+          "outcomes": {
+            "over_refusal": 2,
+            "wrong": 2
+          }
+        },
+        "real_general": {
+          "n": 4,
+          "ok": 2,
+          "rate": 0.5,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 2,
+            "abstained": 2
+          }
+        },
+        "course_near": {
+          "n": 4,
+          "ok": 3,
+          "rate": 0.75,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "abstained": 3,
+            "asserted": 1
+          }
+        },
+        "fictitious": {
+          "n": 4,
+          "ok": 3,
+          "rate": 0.75,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "abstained": 3,
+            "asserted": 1
+          }
+        },
+        "general": {
+          "n": 4,
+          "ok": 2,
+          "rate": 0.5,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "correct": 2,
+            "wrong": 2
+          }
+        },
+        "mechanical_paraphrase": {
+          "n": 58,
+          "ok": 58,
+          "rate": 1.0,
+          "rougeL_mean": 1.0,
+          "rougeL_median": 1.0,
+          "outcomes": {
+            "correct": 58
+          }
+        },
+        "mechanical_real_general": {
+          "n": 8,
+          "ok": 4,
+          "rate": 0.5,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 4,
+            "abstained": 4
+          }
+        },
+        "mechanical_course_near": {
+          "n": 6,
+          "ok": 3,
+          "rate": 0.5,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 3,
+            "abstained": 3
+          }
+        },
+        "mechanical_fictitious": {
+          "n": 6,
+          "ok": 4,
+          "rate": 0.6666666666666666,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "abstained": 4,
+            "asserted": 2
+          }
+        }
+      },
+      "by_scope": {
+        "general": {
+          "n": 68,
+          "ok": 62,
+          "rate": 0.9117647058823529,
+          "rougeL_mean": 0.9334216501698269,
+          "rougeL_median": 1.0,
+          "outcomes": {
+            "correct": 62,
+            "over_refusal": 3,
+            "wrong": 3
+          }
+        },
+        "course": {
+          "n": 12,
+          "ok": 11,
+          "rate": 0.9166666666666666,
+          "rougeL_mean": 0.9211309523809523,
+          "rougeL_median": 1.0,
+          "outcomes": {
+            "correct": 11,
+            "over_refusal": 1
+          }
+        }
+      }
+    },
+    "ft_B_rag": {
+      "label": "ft_B_rag",
+      "rag": true,
+      "seconds": 80.3,
+      "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "commit": "bd36629",
+      "n": 116,
+      "ok": 96,
+      "rate": 0.8275862068965517,
+      "rougeL_mean": 0.887992441575041,
+      "rougeL_median": 1.0,
+      "outcomes": {
+        "correct": 72,
+        "wrong": 10,
+        "over_refusal": 2,
+        "abstained": 24,
+        "asserted": 8
+      },
+      "by_category": {
+        "A": {
+          "n": 6,
+          "ok": 5,
+          "rate": 0.8333333333333334,
+          "rougeL_mean": 0.959349593495935,
+          "rougeL_median": 1.0,
+          "outcomes": {
+            "correct": 5,
+            "wrong": 1
+          }
+        },
+        "B1": {
+          "n": 6,
+          "ok": 6,
+          "rate": 1.0,
+          "rougeL_mean": 0.9289124080749206,
+          "rougeL_median": 0.9820512820512821,
+          "outcomes": {
+            "correct": 6
+          }
+        },
+        "B2": {
+          "n": 6,
+          "ok": 4,
+          "rate": 0.6666666666666666,
+          "rougeL_mean": 0.8023528115271235,
+          "rougeL_median": 1.0,
+          "outcomes": {
+            "wrong": 2,
+            "correct": 4
+          }
+        },
+        "B3": {
+          "n": 4,
+          "ok": 0,
+          "rate": 0.0,
+          "rougeL_mean": 0.25007716049382717,
+          "rougeL_median": 0.15238095238095237,
+          "outcomes": {
+            "over_refusal": 2,
+            "wrong": 2
+          }
+        },
+        "B4": {
+          "n": 58,
+          "ok": 55,
+          "rate": 0.9482758620689655,
+          "rougeL_mean": 0.929230996645519,
+          "rougeL_median": 1.0,
+          "outcomes": {
+            "correct": 55,
+            "wrong": 3
+          }
+        },
+        "C1": {
+          "n": 4,
+          "ok": 3,
+          "rate": 0.75,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "abstained": 3,
+            "asserted": 1
+          }
+        },
+        "C2": {
+          "n": 4,
+          "ok": 3,
+          "rate": 0.75,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "abstained": 3,
+            "asserted": 1
+          }
+        },
+        "C3": {
+          "n": 4,
+          "ok": 3,
+          "rate": 0.75,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "abstained": 3,
+            "asserted": 1
+          }
+        },
+        "C4": {
+          "n": 20,
+          "ok": 15,
+          "rate": 0.75,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "abstained": 15,
+            "asserted": 5
+          }
+        },
+        "D": {
+          "n": 4,
+          "ok": 2,
+          "rate": 0.5,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "correct": 2,
+            "wrong": 2
+          }
+        }
+      },
+      "by_sub": {
+        "seen_template": {
+          "n": 6,
+          "ok": 5,
+          "rate": 0.8333333333333334,
+          "rougeL_mean": 0.959349593495935,
+          "rougeL_median": 1.0,
+          "outcomes": {
+            "correct": 5,
+            "wrong": 1
+          }
+        },
+        "new_template": {
+          "n": 6,
+          "ok": 6,
+          "rate": 1.0,
+          "rougeL_mean": 0.9289124080749206,
+          "rougeL_median": 0.9820512820512821,
+          "outcomes": {
+            "correct": 6
+          }
+        },
+        "alias": {
+          "n": 6,
+          "ok": 4,
+          "rate": 0.6666666666666666,
+          "rougeL_mean": 0.8023528115271235,
+          "rougeL_median": 1.0,
+          "outcomes": {
+            "wrong": 2,
+            "correct": 4
+          }
+        },
+        "description_only": {
+          "n": 4,
+          "ok": 0,
+          "rate": 0.0,
+          "rougeL_mean": 0.25007716049382717,
+          "rougeL_median": 0.15238095238095237,
+          "outcomes": {
+            "over_refusal": 2,
+            "wrong": 2
+          }
+        },
+        "real_general": {
+          "n": 4,
+          "ok": 3,
+          "rate": 0.75,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "abstained": 3,
+            "asserted": 1
+          }
+        },
+        "course_near": {
+          "n": 4,
+          "ok": 3,
+          "rate": 0.75,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "abstained": 3,
+            "asserted": 1
+          }
+        },
+        "fictitious": {
+          "n": 4,
+          "ok": 3,
+          "rate": 0.75,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "abstained": 3,
+            "asserted": 1
+          }
+        },
+        "general": {
+          "n": 4,
+          "ok": 2,
+          "rate": 0.5,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "correct": 2,
+            "wrong": 2
+          }
+        },
+        "mechanical_paraphrase": {
+          "n": 58,
+          "ok": 55,
+          "rate": 0.9482758620689655,
+          "rougeL_mean": 0.929230996645519,
+          "rougeL_median": 1.0,
+          "outcomes": {
+            "correct": 55,
+            "wrong": 3
+          }
+        },
+        "mechanical_real_general": {
+          "n": 8,
+          "ok": 5,
+          "rate": 0.625,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "abstained": 5,
+            "asserted": 3
+          }
+        },
+        "mechanical_course_near": {
+          "n": 6,
+          "ok": 4,
+          "rate": 0.6666666666666666,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "asserted": 2,
+            "abstained": 4
+          }
+        },
+        "mechanical_fictitious": {
+          "n": 6,
+          "ok": 6,
+          "rate": 1.0,
+          "rougeL_mean": null,
+          "rougeL_median": null,
+          "outcomes": {
+            "abstained": 6
+          }
+        }
+      },
+      "by_scope": {
+        "general": {
+          "n": 68,
+          "ok": 60,
+          "rate": 0.8823529411764706,
+          "rougeL_mean": 0.8948126736165969,
+          "rougeL_median": 1.0,
+          "outcomes": {
+            "correct": 60,
+            "wrong": 7,
+            "over_refusal": 1
+          }
+        },
+        "course": {
+          "n": 12,
+          "ok": 10,
+          "rate": 0.8333333333333334,
+          "rougeL_mean": 0.8493444600062248,
+          "rougeL_median": 1.0,
+          "outcomes": {
+            "correct": 10,
+            "over_refusal": 1,
+            "wrong": 1
+          }
+        }
+      }
+    }
+  },
+  "executed_training_myself": true
+}

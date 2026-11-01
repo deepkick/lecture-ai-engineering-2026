@@ -1,0 +1,71 @@
+{
+ "version": "v1",
+ "abstain_answer": "その用語は用語集にありません。",
+ "train_extra_templates": [
+  "{term}とは？",
+  "{term}の意味を教えてください。",
+  "{term}を一言で説明すると？",
+  "用語「{term}」の定義は？"
+ ],
+ "heldout_aliases": {
+  "lora": [
+   "Low-Rank Adaptation"
+  ],
+  "hallucination": [
+   "幻覚"
+  ],
+  "temperature": [
+   "温度パラメータ"
+  ],
+  "homework-levels": [
+   "宿題レベル"
+  ],
+  "human-in-the-loop": [
+   "HITL"
+  ],
+  "default-model": [
+   "デフォルトモデル"
+  ]
+ },
+ "negative_terms": {
+  "real_general": [
+   "ベクトルデータベース",
+   "ビームサーチ",
+   "強化学習",
+   "活性化関数",
+   "バッチサイズ",
+   "勾配降下法",
+   "Docker",
+   "Kubernetes",
+   "BLEU",
+   "混同行列",
+   "正則化",
+   "ドロップアウト"
+  ],
+  "course_near": [
+   "Chain of Thought",
+   "Few-shot プロンプト",
+   "Mixture of Experts",
+   "知識カットオフ",
+   "スケーリング則",
+   "プロンプトインジェクション",
+   "ベンチマーク",
+   "モデルカード"
+  ],
+  "fictitious": [
+   "ニューラル・ブレンディング",
+   "レイヤー・リサイクル",
+   "セマンティック・ハーベスト",
+   "アダプタ・フュージョン法",
+   "逆伝播キャッシュ",
+   "トークン・ミラーリング"
+  ],
+  "course_fictitious": [
+   "AIE2026 の出席ポイント",
+   "AIE2026 の中間レポート",
+   "AIE2026 の補講チケット",
+   "AIE2026 のピアレビュー週間"
+  ]
+ },
+ "note": "B 版の学習データ用。評価セット C の語とは重ねない"
+}

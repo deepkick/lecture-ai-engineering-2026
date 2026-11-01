@@ -1,0 +1,113 @@
+id,category,sub,kind,scope,question,expected_term,hit_terms,hit_at_1,hit_at_3,not_found
+A1,A,seen_template,answer,general,「LoRA」とは何ですか？,LoRA,LoRA,True,True,False
+A2,A,seen_template,answer,general,「ハルシネーション」とは何ですか？,ハルシネーション,ハルシネーション,True,True,False
+A3,A,seen_template,answer,general,「コンテキストウィンドウ」とは何ですか？,コンテキストウィンドウ,コンテキストウィンドウ,True,True,False
+A4,A,seen_template,answer,course,「宿題の3レベル」とは何ですか？,宿題の3レベル,宿題の3レベル,True,True,False
+A5,A,seen_template,answer,course,「既定モデル」とは何ですか？,既定モデル,既定モデル,True,True,False
+A6,A,seen_template,answer,course,「lecNN-start タグ」とは何ですか？,lecNN-start タグ,lecNN-start タグ,True,True,False
+B1-1,B1,new_template,answer,general,QLoRAって何？,QLoRA,LoRA | QLoRA,False,True,False
+B1-2,B1,new_template,answer,general,過学習とはどういう状態のことですか？,過学習,過学習,True,True,False
+B1-3,B1,new_template,answer,general,レート制限について、初心者にもわかるように教えてください。,レート制限,レート制限,True,True,False
+B1-4,B1,new_template,answer,general,ハーネスという言葉は何を指しますか？,ハーネス,ハーネス,True,True,False
+B1-5,B1,new_template,answer,course,answer.md には何を書きますか？,answer.md,answer.md,True,True,False
+B1-6,B1,new_template,answer,general,Codespaces secret はどう使いますか？,Codespaces secret,GitHub Codespaces | Codespaces secret,False,True,False
+B2-1,B2,alias,answer,general,Low-Rank Adaptation とは何ですか？,LoRA,LoRA | ランク（LoRAのr）,True,True,False
+B2-2,B2,alias,answer,general,LLM の「幻覚」とは何ですか？,ハルシネーション,LLM（大規模言語モデル）,False,False,False
+B2-3,B2,alias,answer,general,温度パラメータとは何ですか？,temperature,temperature,True,True,False
+B2-4,B2,alias,answer,course,宿題レベルとは何ですか？,宿題の3レベル,宿題の3レベル,True,True,False
+B2-5,B2,alias,answer,general,HITL とは何ですか？,Human-in-the-loop,Human-in-the-loop,True,True,False
+B2-6,B2,alias,answer,course,デフォルトモデルは何ですか？,既定モデル,既定モデル,True,True,False
+B3-1,B3,description_only,answer,general,事前学習済みの重みを固定し、小さな行列だけを学習する手法の名前は？,LoRA,事前学習,False,False,False
+B3-2,B3,description_only,answer,general,学習データ全体を1周学習することを何と呼びますか？,エポック,,False,False,True
+B3-3,B3,description_only,answer,course,AIE2026 で、各回の演習開始時点のコードに付いている Git のタグを何と呼びますか？,lecNN-start タグ,,False,False,True
+B3-4,B3,description_only,answer,general,エージェントの処理の途中に人の承認を組み込むことを何と言いますか？,Human-in-the-loop,AIエージェント,False,False,False
+C1-1,C1,real_general,abstain,,RAG とは何ですか？,,,False,False,True
+C1-2,C1,real_general,abstain,,Transformer とは何ですか？,,,False,False,True
+C1-3,C1,real_general,abstain,,埋め込み（エンベディング）とは何ですか？,,,False,False,True
+C1-4,C1,real_general,abstain,,プロンプトキャッシュとは何ですか？,,プロンプト,False,False,False
+C2-1,C2,course_near,abstain,,継続事前学習とは何ですか？,,事前学習,False,False,False
+C2-2,C2,course_near,abstain,,DoRA とは何ですか？,,,False,False,True
+C2-3,C2,course_near,abstain,,推論時計算とは何ですか？,,,False,False,True
+C2-4,C2,course_near,abstain,,蒸留（ディスティレーション）とは何ですか？,,,False,False,True
+C3-1,C3,fictitious,abstain,,グラディエント・スタッキングとは何ですか？,,,False,False,True
+C3-2,C3,fictitious,abstain,,リバースLoRA とは何ですか？,,LoRA,False,False,False
+C3-3,C3,fictitious,abstain,,トークン・フォールディングとは何ですか？,,トークン,False,False,False
+C3-4,C3,fictitious,abstain,,AIE2026 の「週次ボーナス課題」とは何ですか？,,,False,False,True
+B4-01,B4,mechanical_paraphrase,answer,general,AIエンジニアリングという用語の意味を、短く説明してください。,AIエンジニアリング,AIエンジニアリング,True,True,False
+B4-02,B4,mechanical_paraphrase,answer,general,評価と改善のサイクルという用語の意味を、短く説明してください。,評価と改善のサイクル,評価と改善のサイクル,True,True,False
+B4-03,B4,mechanical_paraphrase,answer,general,LLM（大規模言語モデル）という用語の意味を、短く説明してください。,LLM（大規模言語モデル）,LLM（大規模言語モデル）,True,True,False
+B4-04,B4,mechanical_paraphrase,answer,general,トークンという用語の意味を、短く説明してください。,トークン,トークン,True,True,False
+B4-05,B4,mechanical_paraphrase,answer,general,コンテキストウィンドウという用語の意味を、短く説明してください。,コンテキストウィンドウ,コンテキストウィンドウ,True,True,False
+B4-06,B4,mechanical_paraphrase,answer,general,プロンプトという用語の意味を、短く説明してください。,プロンプト,プロンプト,True,True,False
+B4-07,B4,mechanical_paraphrase,answer,general,システムプロンプトという用語の意味を、短く説明してください。,システムプロンプト,プロンプト | システムプロンプト,False,True,False
+B4-08,B4,mechanical_paraphrase,answer,general,temperatureという用語の意味を、短く説明してください。,temperature,temperature,True,True,False
+B4-09,B4,mechanical_paraphrase,answer,general,ハルシネーションという用語の意味を、短く説明してください。,ハルシネーション,ハルシネーション,True,True,False
+B4-10,B4,mechanical_paraphrase,answer,general,APIという用語の意味を、短く説明してください。,API,API,True,True,False
+B4-11,B4,mechanical_paraphrase,answer,general,APIキーという用語の意味を、短く説明してください。,APIキー,API | APIキー,False,True,False
+B4-12,B4,mechanical_paraphrase,answer,general,環境変数という用語の意味を、短く説明してください。,環境変数,環境変数,True,True,False
+B4-13,B4,mechanical_paraphrase,answer,general,レート制限という用語の意味を、短く説明してください。,レート制限,レート制限,True,True,False
+B4-14,B4,mechanical_paraphrase,answer,general,GitHub Codespacesという用語の意味を、短く説明してください。,GitHub Codespaces,GitHub Codespaces,True,True,False
+B4-15,B4,mechanical_paraphrase,answer,general,devcontainerという用語の意味を、短く説明してください。,devcontainer,devcontainer,True,True,False
+B4-16,B4,mechanical_paraphrase,answer,general,Codespaces secretという用語の意味を、短く説明してください。,Codespaces secret,GitHub Codespaces | Codespaces secret,False,True,False
+B4-17,B4,mechanical_paraphrase,answer,general,forkという用語の意味を、短く説明してください。,fork,fork,True,True,False
+B4-18,B4,mechanical_paraphrase,answer,general,ブランチという用語の意味を、短く説明してください。,ブランチ,ブランチ,True,True,False
+B4-19,B4,mechanical_paraphrase,answer,general,プルリクエスト（PR）という用語の意味を、短く説明してください。,プルリクエスト（PR）,プルリクエスト（PR）,True,True,False
+B4-20,B4,mechanical_paraphrase,answer,general,GitHub Copilotという用語の意味を、短く説明してください。,GitHub Copilot,GitHub Copilot,True,True,False
+B4-21,B4,mechanical_paraphrase,answer,general,コード補完という用語の意味を、短く説明してください。,コード補完,コード補完,True,True,False
+B4-22,B4,mechanical_paraphrase,answer,general,コーディングエージェントという用語の意味を、短く説明してください。,コーディングエージェント,コーディングエージェント | AIエージェント,True,True,False
+B4-23,B4,mechanical_paraphrase,answer,general,事前学習という用語の意味を、短く説明してください。,事前学習,事前学習,True,True,False
+B4-24,B4,mechanical_paraphrase,answer,general,ファインチューニングという用語の意味を、短く説明してください。,ファインチューニング,ファインチューニング,True,True,False
+B4-25,B4,mechanical_paraphrase,answer,general,教師ありファインチューニング（SFT）という用語の意味を、短く説明してください。,教師ありファインチューニング（SFT）,ファインチューニング | 教師ありファインチューニング（SFT）,False,True,False
+B4-26,B4,mechanical_paraphrase,answer,general,PEFTという用語の意味を、短く説明してください。,PEFT,PEFT,True,True,False
+B4-27,B4,mechanical_paraphrase,answer,general,LoRAという用語の意味を、短く説明してください。,LoRA,LoRA,True,True,False
+B4-28,B4,mechanical_paraphrase,answer,general,ランク（LoRAのr）という用語の意味を、短く説明してください。,ランク（LoRAのr）,LoRA | ランク（LoRAのr）,False,True,False
+B4-29,B4,mechanical_paraphrase,answer,general,QLoRAという用語の意味を、短く説明してください。,QLoRA,LoRA | QLoRA,False,True,False
+B4-30,B4,mechanical_paraphrase,answer,general,量子化という用語の意味を、短く説明してください。,量子化,量子化,True,True,False
+B4-31,B4,mechanical_paraphrase,answer,general,学習率という用語の意味を、短く説明してください。,学習率,学習率,True,True,False
+B4-32,B4,mechanical_paraphrase,answer,general,エポックという用語の意味を、短く説明してください。,エポック,エポック,True,True,False
+B4-33,B4,mechanical_paraphrase,answer,general,過学習という用語の意味を、短く説明してください。,過学習,過学習,True,True,False
+B4-34,B4,mechanical_paraphrase,answer,general,Hugging Face Hubという用語の意味を、短く説明してください。,Hugging Face Hub,Hugging Face Hub,True,True,False
+B4-35,B4,mechanical_paraphrase,answer,general,AIエージェントという用語の意味を、短く説明してください。,AIエージェント,AIエージェント,True,True,False
+B4-36,B4,mechanical_paraphrase,answer,general,エージェントループという用語の意味を、短く説明してください。,エージェントループ,AIエージェント | エージェントループ,False,True,False
+B4-37,B4,mechanical_paraphrase,answer,general,ツール（Tool use / Function calling）という用語の意味を、短く説明してください。,ツール（Tool use / Function calling）,ツール（Tool use / Function calling）,True,True,False
+B4-38,B4,mechanical_paraphrase,answer,general,ツールの説明文という用語の意味を、短く説明してください。,ツールの説明文,ツール（Tool use / Function calling） | ツールの説明文,False,True,False
+B4-39,B4,mechanical_paraphrase,answer,general,構造化出力という用語の意味を、短く説明してください。,構造化出力,構造化出力,True,True,False
+B4-40,B4,mechanical_paraphrase,answer,general,ハーネスという用語の意味を、短く説明してください。,ハーネス,ハーネス,True,True,False
+B4-41,B4,mechanical_paraphrase,answer,course,Piという用語の意味を、短く説明してください。,Pi,,False,False,True
+B4-42,B4,mechanical_paraphrase,answer,general,Pydantic AIという用語の意味を、短く説明してください。,Pydantic AI,Pydantic AI,True,True,False
+B4-43,B4,mechanical_paraphrase,answer,general,ADK（Agent Development Kit）という用語の意味を、短く説明してください。,ADK（Agent Development Kit）,AIエージェント | ADK（Agent Development Kit）,False,True,False
+B4-44,B4,mechanical_paraphrase,answer,general,MCP（Model Context Protocol）という用語の意味を、短く説明してください。,MCP（Model Context Protocol）,MCP（Model Context Protocol）,True,True,False
+B4-45,B4,mechanical_paraphrase,answer,general,ガードレールという用語の意味を、短く説明してください。,ガードレール,ガードレール,True,True,False
+B4-46,B4,mechanical_paraphrase,answer,general,Human-in-the-loopという用語の意味を、短く説明してください。,Human-in-the-loop,Human-in-the-loop,True,True,False
+B4-47,B4,mechanical_paraphrase,answer,general,TestModelという用語の意味を、短く説明してください。,TestModel,TestModel,True,True,False
+B4-48,B4,mechanical_paraphrase,answer,course,宿題の3レベルという用語の意味を、短く説明してください。,宿題の3レベル,宿題の3レベル,True,True,False
+B4-49,B4,mechanical_paraphrase,answer,course,answer.mdという用語の意味を、短く説明してください。,answer.md,answer.md,True,True,False
+B4-50,B4,mechanical_paraphrase,answer,course,lecNN-start タグという用語の意味を、短く説明してください。,lecNN-start タグ,lecNN-start タグ,True,True,False
+B4-51,B4,mechanical_paraphrase,answer,course,既定モデルという用語の意味を、短く説明してください。,既定モデル,既定モデル,True,True,False
+B4-52,B4,mechanical_paraphrase,answer,general,外部ツールという用語の意味を、短く説明してください。,外部ツール,ツール（Tool use / Function calling） | 外部ツール,False,True,False
+B4-53,B4,mechanical_paraphrase,answer,general,MCPサーバーという用語の意味を、短く説明してください。,MCPサーバー,MCP（Model Context Protocol） | MCPサーバー,False,True,False
+B4-54,B4,mechanical_paraphrase,answer,general,MCPクライアントという用語の意味を、短く説明してください。,MCPクライアント,MCP（Model Context Protocol） | MCPクライアント,False,True,False
+B4-55,B4,mechanical_paraphrase,answer,general,トランスポート（stdio・Streamable HTTP）という用語の意味を、短く説明してください。,トランスポート（stdio・Streamable HTTP）,トランスポート（stdio・Streamable HTTP）,True,True,False
+B4-56,B4,mechanical_paraphrase,answer,general,mcpServers設定という用語の意味を、短く説明してください。,mcpServers設定,MCP（Model Context Protocol） | MCPサーバー | mcpServers設定,False,True,False
+B4-57,B4,mechanical_paraphrase,answer,general,ツールの名前空間という用語の意味を、短く説明してください。,ツールの名前空間,ツール（Tool use / Function calling） | ツールの名前空間,False,True,False
+B4-58,B4,mechanical_paraphrase,answer,general,fetchサーバーという用語の意味を、短く説明してください。,fetchサーバー,fetchサーバー,True,True,False
+C4-01,C4,mechanical_real_general,abstain,,LangChainという用語の意味を、短く説明してください。,,,False,False,True
+C4-02,C4,mechanical_real_general,abstain,,ベクトル検索という用語の意味を、短く説明してください。,,,False,False,True
+C4-03,C4,mechanical_real_general,abstain,,ゼロショット学習という用語の意味を、短く説明してください。,,,False,False,True
+C4-04,C4,mechanical_real_general,abstain,,知識グラフという用語の意味を、短く説明してください。,,,False,False,True
+C4-05,C4,mechanical_real_general,abstain,,ReActという用語の意味を、短く説明してください。,,,False,False,True
+C4-06,C4,mechanical_real_general,abstain,,パープレキシティという用語の意味を、短く説明してください。,,,False,False,True
+C4-07,C4,mechanical_real_general,abstain,,勾配クリッピングという用語の意味を、短く説明してください。,,,False,False,True
+C4-08,C4,mechanical_real_general,abstain,,LLM-as-a-Judgeという用語の意味を、短く説明してください。,,LLM（大規模言語モデル）,False,False,False
+C4-09,C4,mechanical_course_near,abstain,,コンテキストエンジニアリングという用語の意味を、短く説明してください。,,,False,False,True
+C4-10,C4,mechanical_course_near,abstain,,Lost in the Middleという用語の意味を、短く説明してください。,,,False,False,True
+C4-11,C4,mechanical_course_near,abstain,,迎合（シコファンシー）という用語の意味を、短く説明してください。,,,False,False,True
+C4-12,C4,mechanical_course_near,abstain,,RLHFという用語の意味を、短く説明してください。,,,False,False,True
+C4-13,C4,mechanical_course_near,abstain,,RLVRという用語の意味を、短く説明してください。,,,False,False,True
+C4-14,C4,mechanical_course_near,abstain,,オープンウェイトという用語の意味を、短く説明してください。,,,False,False,True
+C4-15,C4,mechanical_fictitious,abstain,,ハイパー・トークナイズという用語の意味を、短く説明してください。,,,False,False,True
+C4-16,C4,mechanical_fictitious,abstain,,アテンション・ドリフト補正という用語の意味を、短く説明してください。,,,False,False,True
+C4-17,C4,mechanical_fictitious,abstain,,メタLoRA蒸着という用語の意味を、短く説明してください。,,LoRA,False,False,False
+C4-18,C4,mechanical_fictitious,abstain,,AIE2026 の特別演習パスという用語の意味を、短く説明してください。,,,False,False,True
+C4-19,C4,mechanical_fictitious,abstain,,デュアル・プロンプト圧縮という用語の意味を、短く説明してください。,,プロンプト,False,False,False
+C4-20,C4,mechanical_fictitious,abstain,,逆量子化ブーストという用語の意味を、短く説明してください。,,量子化,False,False,False

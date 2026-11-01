@@ -1,0 +1,16 @@
+{
+  "seconds": 45.9,
+  "steps": 150,
+  "expected_steps": 150,
+  "epoch": 10.0,
+  "final_loss": 0.08244315981864929,
+  "mean_loss": 0.7351614942153295,
+  "trainable_params": 6389760,
+  "all_params": 758782784,
+  "trainable_pct": 0.8421066126877228,
+  "n_train": 116,
+  "warmup_steps": 15,
+  "save_steps": 38,
+  "bf16": false,
+  "fp16": false
+}

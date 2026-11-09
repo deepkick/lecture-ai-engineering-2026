@@ -1,0 +1,52 @@
+# 第3回 演習の実行記録 2026-11-09 11:58:42
+
+$ uv run python -m app.agent "AIE2026の講座の宿題にある「3レベル」とは何ですか？"
+[model] gemini-3.5-flash-lite
+「3レベル」とは、AIE2026の宿題における構成のことです。
+
+宿題には以下の3段階のレベルが用意されており、いずれか1つに取り組めばその回の宿題は完了となります。原則として採点は行われません。
+
+1. **基礎**：講義内容の確認
+2. **実装**：自分でコードを書く
+3. **発展**：調査や試行
+
+もし宿題の具体的な問題について取り組む際は、それぞれのレベルに応じたご自身のペースや目的に合わせて進めてみてください。考え方やヒントが必要な場合は、いつでもお気軽にご相談くださいね。
+
+（関連する回：第1回）
+
+$ uv run python -m app.agent --trace "LoRAとQLoRAの違いは？"
+[model] gemini-3.5-flash-lite
+モデルが混み合っています（503）。少し待ってから再実行してください。
+[retry] 503 → 20秒待って1回だけやり直す
+$ uv run python -m app.agent --trace "LoRAとQLoRAの違いは？"
+[model] gemini-3.5-flash-lite
+LoRAとQLoRAの違いは、ベースモデルの重みの扱い方にあります。
+
+* **LoRA**
+  事前学習済みの重みを固定したまま、重みの更新分を表す小さな低ランク行列（アダプタ）だけを学習するPEFT（Parameter-Efficient Fine-Tuning）手法です。学習するパラメータを大幅に削減できます。
+
+* **QLoRA**
+  LoRAの仕組みをベースにしつつ、ベースモデルの重みを4ビットなどに**量子化**（圧縮）してメモリをさらに大幅に節約したうえで学習を行う手法です。これにより、より大きなモデルを小さなGPU環境でも扱えるようになります。
+
+関係する回：第2回
+
+--- trace ---
+[tool call]   search_glossary({'query': 'LoRA'})
+[tool call]   search_glossary({'query': 'QLoRA'})
+[tool return] search_glossary -> [{"term": "LoRA", "lecture": 2, "definition": "事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラ…
+[tool return] search_glossary -> [{"term": "QLoRA", "lecture": 2, "definition": "ベースモデルの重みを4ビットなどに量子化してメモリを節約したうえで、LoRAで学習する手法。より大きなモデルを小さなGPUで扱える。本講座の第2…
+[usage] RunUsage(cost=Decimal('0.0009229'), details={'text_prompt_tokens': 1518}, input_text_tokens=1518, input_tokens=1518, output_tokens=187, requests=2, tool_calls=2)
+
+$ uv run python -m app.agent --trace "第2回の内容から確認問題を1問出して"
+[model] gemini-3.5-flash-lite
+それでは、第2回の内容から確認問題です！
+
+**Q. 「QLoRA」とはどのような技術（手法）でしょうか？**
+
+あなたの言葉で教えてくださいね！
+
+--- trace ---
+[tool call]   make_quiz({'lecture': 2})
+[tool return] make_quiz -> {"question": "「QLoRA」の意味は？", "answer": "ベースモデルの重みを4ビットなどに量子化してメモリを節約したうえで、LoRAで学習する手法。より大きなモデルを小さなGPUで扱える。本講座の第2回演習ではモデル…
+[usage] RunUsage(cost=Decimal('0.0004563'), details={'text_prompt_tokens': 1096}, input_text_tokens=1096, input_tokens=1096, output_tokens=51, requests=2, tool_calls=1)
+

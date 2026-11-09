@@ -1,0 +1,64 @@
+# adk run の記録（2026-11-09 13:19〜13:24）
+
+コマンド（ターミナルで対話実行）:
+    PYTHONPATH=. uv run --with google-adk adk run adk_agent/glossary_agent
+
+出典:
+- ADK のログ: /var/folders/.../T/agents_log/agent.20261109_131924.log（30 行。LLM の送信・HTTP 200・受信の記録のみで、
+  入力文や function_call は含まれない。API キーなどの秘密情報を含む行は無かった）
+- セッション DB: adk_agent/glossary_agent/.adk/session.db（adk run が自動で作る SQLite。events テーブルに
+  ユーザー入力・function_call・function_response・モデルの回答・usage_metadata が残る。session_id b519f87d-…、user_id test_user）
+- 各ターンの LLM 呼び出し回数は、ログの「Sending out request」の数と、DB で usage_metadata を持つモデルのイベント数の両方で数え、一致を確認した。
+- モデル: gemini-3.5-flash-lite（GEMINI_API、stream: False）
+
+起動: 13:19:57 「Found root_agent in glossary_agent.agent」。1つのセッションで4ターン続けて会話した（履歴は持ち越される）。
+
+## ターン1  13:21:19  入力:「LoRAとQLoRAの違いは？」
+- LLM 呼び出し: 2 回（13:21:19 → 200 OK、13:21:20 → 200 OK）
+- function_call（1回目の応答で2つ同時）:
+    search_glossary({"query": "LoRA"})
+    search_glossary({"query": "QLoRA"})
+- トークン: 1回目 in=543 out=37、2回目 in=1099 out=182（思考トークンなし）
+- 回答の要約: LoRA は事前学習済みの重みを固定し、更新分を低ランク行列で表してそこだけ学習する PEFT 手法。
+  QLoRA はそれに加えてベースモデルの重みを4ビットなどに量子化してメモリを節約し、大きなモデルを小さな GPU で扱える。
+  末尾に「関係する回：第2回」。
+  → 比較スクリプト（履歴なし）の ADK 版と同じツールの呼び方・同じ趣旨の回答。
+
+## ターン2  13:22:14  入力:「VLAとは何ですか？」
+- LLM 呼び出し: 2 回（13:22:14、13:22:15）
+- function_call:
+    search_glossary({"query": "VLA"})
+- ツールの返り値: 「用語集に「VLA」は見つかりませんでした。」
+- トークン: 1回目 in=1289 out=18、2回目 in=1333 out=26
+- 回答の要約: 「用語集にはない用語です。講座の用語集を確認しましたが、「VLA」についての定義や記述は見つかりませんでした。」
+  （一般知識での補足も、第N回の表示も無し。比較スクリプトの ADK 版 rep2 と同じく短い）
+- 入力トークンがターン1より多いのは、ターン1の会話履歴（検索結果を含む）を持ち越しているため。
+
+## ターン3  13:22:55  入力:「第2回の内容から確認問題を1問出して」
+- LLM 呼び出し: 2 回（13:22:55、13:22:55）
+- function_call:
+    make_quiz({"lecture": 2})
+- ツールの返り値: question「「事前学習」の意味は？」、answer「大量の汎用テキストで、次のトークンを予測するように…」、term_id pretraining
+- トークン: 1回目 in=1371 out=14、2回目 in=1464 out=32
+- 回答の要約: 「それでは、第2回の内容から確認問題です。 Q. 「事前学習」の意味は何でしょうか？ 分かったら教えてくださいね！」
+  （answer は伏せた。ツールの question をほぼそのまま使う出し方で、比較スクリプトの ADK 版と同じ傾向。第N回の表示は本文冒頭の「第2回」のみ）
+
+## ターン4  13:23:51  入力:「大量のデータで、ベースのモデルを作る最初の学習のことですか？」（ターン3 の問題への回答）
+- LLM 呼び出し: 1 回（13:23:51）
+- function_call: なし（ターン3 の make_quiz の answer が履歴にあるので、検索せずに採点した）
+- トークン: in=1512 out=63
+- 回答の要約: 「お見事です！正解です！」と判定し、事前学習は大量データで次トークン予測などを通じて言語の基礎知識や常識を
+  獲得させる最初の段階と説明。末尾に「関係する回：第2回」。
+  → 履歴を持ち越す adk run ならではの流れ（比較スクリプトは質問ごとに新しいセッションなので再現できない）。
+
+終了: 13:24:41 「Closing runner... / Runner closed.」（exit で終了）
+
+## 集計
+- 4 ターン、LLM 呼び出し 計 7 回（2+2+2+1）、HTTP はすべて 200 OK（429/503 なし）
+- ツール呼び出し 計 4 回（search_glossary 3 回、make_quiz 1 回）。ツールの選び方・引数は比較スクリプトの ADK 版と一致
+- 各 LLM 呼び出しの応答時間はログの送信→受信でおおむね 0.8〜1.1 秒
+
+## 注意
+- adk run は adk_agent/glossary_agent/.adk/session.db を作る（ローカルのセッション保存）。提出物ではないので、
+  git add -A の前に削除するか .gitignore に .adk/ を追加するとよい。
+- --save_session は使っていないので *.session.json は無い。

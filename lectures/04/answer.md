@@ -36,7 +36,7 @@
   2. 誰が何人で、どう作り、どう検証・採点したか。今日の評価セットとどう違うか。
 
 - やったこと：
-  - データセット：SWE-bench Verified（https://huggingface.co/datasets/princeton-nlp/SWE-bench_Verified）。難易度の違う5件を読んだ（うち3件は、OpenAI が 2026 年に不備や混入の例に挙げた問題）。
+  - データセット：[SWE-bench Verified（Hugging Face）](https://huggingface.co/datasets/princeton-nlp/SWE-bench_Verified)。難易度の違う5件を読んだ（うち3件は、OpenAI が 2026 年に不備や混入の例に挙げた問題）。
   - 元の論文（C. E. Jimenez et al., ICLR 2024, arXiv:2310.06770）と OpenAI の記事2本（2024/8「Introducing SWE-bench Verified」、2026/2「Why SWE-bench Verified no longer measures frontier coding capabilities」）で、作成・検証・採点の手順を調べた。
 
 - 結果：

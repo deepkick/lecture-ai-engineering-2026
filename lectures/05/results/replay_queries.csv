@@ -1,0 +1,37 @@
+﻿qid,top_k,query_no,query,kind,group,pages,best_rank,best_page,in_top5,in_top10,page_ranks
+L1,5,1,LLM 費用 下げる コスト,required,1,lec02-main-p049,1,lec02-main-p049,True,True,lec02-main-p049:1
+L1,5,1,LLM 費用 下げる コスト,required,2,lec02-main-p041,,,False,False,lec02-main-p041:>20
+L1,5,1,LLM 費用 下げる コスト,required,3,lec03-main-p016,6,lec03-main-p016,False,True,lec03-main-p016:6
+L1,5,1,LLM 費用 下げる コスト,required,4,lec03-main-p031,,,False,False,lec03-main-p031:>20
+L1,5,2,プロンプトキャッシュ,required,1,lec02-main-p049,4,lec02-main-p049,True,True,lec02-main-p049:4
+L1,5,2,プロンプトキャッシュ,required,2,lec02-main-p041,,,False,False,lec02-main-p041:>20
+L1,5,2,プロンプトキャッシュ,required,3,lec03-main-p016,1,lec03-main-p016,True,True,lec03-main-p016:1
+L1,5,2,プロンプトキャッシュ,required,4,lec03-main-p031,,,False,False,lec03-main-p031:>20
+L1,10,1,費用 コスト 下げる 削減 LLM,required,1,lec02-main-p049,1,lec02-main-p049,True,True,lec02-main-p049:1
+L1,10,1,費用 コスト 下げる 削減 LLM,required,2,lec02-main-p041,,,False,False,lec02-main-p041:>20
+L1,10,1,費用 コスト 下げる 削減 LLM,required,3,lec03-main-p016,7,lec03-main-p016,False,True,lec03-main-p016:7
+L1,10,1,費用 コスト 下げる 削減 LLM,required,4,lec03-main-p031,,,False,False,lec03-main-p031:>20
+V1,5,1,見積書 メール送信 2通,required,1,lec03-main-p027,1,lec03-main-p027,True,True,lec03-main-p027:1
+V1,5,1,見積書 メール送信 2通,required,2,lec03-main-p048,2,lec03-main-p048,True,True,lec03-main-p048:2
+V1,5,2,冪等性の担保 対策,required,1,lec03-main-p027,2,lec03-main-p027,True,True,lec03-main-p027:2
+V1,5,2,冪等性の担保 対策,required,2,lec03-main-p048,1,lec03-main-p048,True,True,lec03-main-p048:1
+V1,10,1,メール送信 エージェント 2通 同じ,required,1,lec03-main-p027,1,lec03-main-p027,True,True,lec03-main-p027:1
+V1,10,1,メール送信 エージェント 2通 同じ,required,2,lec03-main-p048,2,lec03-main-p048,True,True,lec03-main-p048:2
+V2,5,1,新しいチャット 覚えている 仕組み,required,1,lec03-main-p013,2,lec03-main-p013,True,True,lec03-main-p013:2
+V2,5,1,新しいチャット 覚えている 仕組み,required,2,lec03-main-p039;lec03-main-p040;lec03-main-p041,3,lec03-main-p040,True,True,lec03-main-p039:6;lec03-main-p040:3;lec03-main-p041:20
+V2,10,1,AI チャット 覚えている 仕組み 記憶,required,1,lec03-main-p013,1,lec03-main-p013,True,True,lec03-main-p013:1
+V2,10,1,AI チャット 覚えている 仕組み 記憶,required,2,lec03-main-p039;lec03-main-p040;lec03-main-p041,3,lec03-main-p040,True,True,lec03-main-p039:4;lec03-main-p040:3;lec03-main-p041:10
+V3,5,1,AI 答えが毎回ちがう 非決定性 サンプリング 温度,required,1,lec02-main-p012,1,lec02-main-p012,True,True,lec02-main-p012:1
+V3,5,1,AI 答えが毎回ちがう 非決定性 サンプリング 温度,required,2,lec02-main-p013;lec02-main-p018,2,lec02-main-p018,True,True,lec02-main-p013:4;lec02-main-p018:2
+V3,10,1,AIの答えが毎回違う なぜ 起きる 扱う,required,1,lec02-main-p012,5,lec02-main-p012,True,True,lec02-main-p012:5
+V3,10,1,AIの答えが毎回違う なぜ 起きる 扱う,required,2,lec02-main-p013;lec02-main-p018,1,lec02-main-p013,True,True,lec02-main-p013:1;lec02-main-p018:3
+V6,5,1,片付け 事故 フォルダ 消された,required,1,lec03-main-p052,1,lec03-main-p052,True,True,lec03-main-p052:1
+V6,5,1,片付け 事故 フォルダ 消された,required,2,lec03-main-p053,,,False,False,lec03-main-p053:>20
+V6,10,1,事故,required,1,lec03-main-p052,2,lec03-main-p052,True,True,lec03-main-p052:2
+V6,10,1,事故,required,2,lec03-main-p053,,,False,False,lec03-main-p053:>20
+X2,5,1,LLMの性質 エージェントの設計 第2回 第3回,required,1,lec03-main-p003,1,lec03-main-p003,True,True,lec03-main-p003:1
+X2,5,1,LLMの性質 エージェントの設計 第2回 第3回,required,2,lec02-main-p013;lec02-main-p014,16,lec02-main-p013,False,False,lec02-main-p013:16;lec02-main-p014:>20
+X2,10,1,第2回 LLM 性質,required,1,lec03-main-p003,18,lec03-main-p003,False,False,lec03-main-p003:18
+X2,10,1,第2回 LLM 性質,required,2,lec02-main-p013;lec02-main-p014,6,lec02-main-p014,False,True,lec02-main-p013:8;lec02-main-p014:6
+X2,10,2,第3回 エージェント 設計,required,1,lec03-main-p003,4,lec03-main-p003,True,True,lec03-main-p003:4
+X2,10,2,第3回 エージェント 設計,required,2,lec02-main-p013;lec02-main-p014,,,False,False,lec02-main-p013:>20;lec02-main-p014:>20

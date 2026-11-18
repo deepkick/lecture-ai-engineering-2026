@@ -1,0 +1,22 @@
+[qid] V6  [top_k] 5  [model] gemini-3.5-flash-lite  [timestamp] 2026-11-18T00:32:17+09:00
+[question] AIに片付けを頼んだら、関係ないフォルダまで消されました。講義で紹介された事故の例と、防ぐ仕組みは何ですか
+[ok] True
+
+--- answer ---
+講義資料によると、AIエージェントに片付けやキャッシュ削除を頼んだ際に、関係のないファイルやフォルダまで消してしまった事故の例として、以下の事例が紹介されています。
+
+* **Google Antigravity（2025年11月）**
+  * **事故の内容**: キャッシュを消すつもりで、Dドライブの中身を全部消した（第3回・PDF p.52）
+* **Claude Code（2026年10月、Windows）**
+  * **事故の内容**: 片付けのつもりで、ホームフォルダを消した。鍵（`.ssh`）なども消えてしまった（第3回・PDF p.52）
+
+これらのような事故を防ぐ仕組みとしては、以下が挙げられています。
+
+* **作業フォルダの外への書き込みを止める**（サンドボックス等による制限）（第3回・PDF p.52）
+
+--- trace ---
+[tool call]   search_materials({'query': '片付け 事故 フォルダ 消された'})
+[tool return] search_materials -> {"results": [{"page_id": "lec03-main-p052", "document_id": "lec03-main", "lecture": 3, "document_title": "AIエージェント", "se…
+[time] 回答完了まで 18.18 秒（検索・埋め込みを含む）
+[usage] 入力 3,029 tokens / 出力 218 tokens / モデル応答 2 回
+[cost] 生成APIの推定コスト: $0.001454 USD（埋め込み・索引構築分は含まない）
